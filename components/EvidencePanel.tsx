@@ -12,7 +12,7 @@ import ExtractionField from './ExtractionField';
 import AIRecommendation from './AIRecommendation';
 import DecisionPanel from './DecisionPanel';
 import AuditTrail from './AuditTrail';
-import { formatErrorMessage } from '@/lib/utils';
+
 
 interface EvidencePanelProps {
   caseData: Case;
