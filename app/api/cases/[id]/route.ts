@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
-  _request: NextRequest,
-  { params }: { params: { id: string } }
+  request: NextRequest,
+  context: { params: { id: string } }
 ) {
   try {
-    const { id } = params;
+    const { id } = context.params;
 
-    // your existing logic here
     return NextResponse.json({ id });
   } catch (error) {
     return NextResponse.json(
