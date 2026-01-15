@@ -1,16 +1,18 @@
-import { NextResponse } from 'next/server'
-import { mockApi } from '@/lib/mockApi'
+import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
+  _request: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
-    const caseData = await mockApi.getCaseDetails(params.id, false)
-    return NextResponse.json(caseData)
+    const { id } = params;
+
+    // your existing logic here
+    return NextResponse.json({ id });
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to fetch case details' },
+      { error: "Something went wrong" },
       { status: 500 }
-    )
+    );
   }
 }
