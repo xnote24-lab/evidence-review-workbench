@@ -199,7 +199,8 @@ interface CaseRowProps {
 }
 
 function CaseRow({ caseItem: c, style, onClick }: CaseRowProps) {
-  const { hours, isOverdue, isUrgent } = calculateSLARemaining(c.slaDeadline);
+  const { hours: _hours, isOverdue: _isOverdue, isUrgent: _isUrgent } =
+  calculateSLARemaining(c.slaDeadline);
 
   return (
     <div
